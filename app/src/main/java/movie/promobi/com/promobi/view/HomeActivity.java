@@ -1,4 +1,4 @@
-package movie.promobi.com.promobi;
+package movie.promobi.com.promobi.view;
 
 import android.app.Activity;
 import android.arch.lifecycle.LifecycleOwner;
@@ -21,11 +21,11 @@ import dagger.android.AndroidInjection;
 import dagger.android.AndroidInjector;
 import dagger.android.DispatchingAndroidInjector;
 import dagger.android.HasActivityInjector;
+import movie.promobi.com.promobi.R;
 import movie.promobi.com.promobi.data.local.entity.Movie;
 import movie.promobi.com.promobi.data.remote.Status;
 import movie.promobi.com.promobi.di.MovieViewModel;
 import movie.promobi.com.promobi.util.ProgressBarHandler;
-import movie.promobi.com.promobi.view.MovieListAdapter;
 
 public class HomeActivity extends AppCompatActivity implements LifecycleOwner, HasActivityInjector {
 
@@ -99,7 +99,7 @@ public class HomeActivity extends AppCompatActivity implements LifecycleOwner, H
                 }
             });
         } else {
-            Toast.makeText(this, "View Model not initialsed", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "View Model not initialized", Toast.LENGTH_SHORT).show();
         }
 
     }

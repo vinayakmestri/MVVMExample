@@ -2,7 +2,7 @@ package movie.promobi.com.promobi.di.module;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
-import movie.promobi.com.promobi.HomeActivity;
+import movie.promobi.com.promobi.view.HomeActivity;
 
 /**
  * Created by Admin on 6/8/2019.
