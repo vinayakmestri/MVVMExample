@@ -50,12 +50,12 @@ public class ProgressBarHandler {
 
     public void show() {
         layout.setOnTouchListener(null);
-        rl.setBackgroundColor(mContext.getResources().getColor(android.R.color.holo_green_light));
+        rl.setBackgroundColor(mContext.getResources().getColor(R.color.BlackLight));
         mProgressBar.setVisibility(View.VISIBLE);
     }
 
     public void hide() {
-        rl.setBackgroundColor(mContext.getResources().getColor(android.R.color.transparent));
+        rl.setBackgroundColor(mContext.getResources().getColor(R.color.Transparent));
         if (mProgressBar.getVisibility() == View.VISIBLE) {
             mProgressBar.setVisibility(View.INVISIBLE);
         }
