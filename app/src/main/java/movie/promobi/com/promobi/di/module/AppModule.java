@@ -21,7 +21,9 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
- * Created by Admin on 6/5/2019.
+ * Created by Vinayak on 6/5/2019.
+ *
+ * This class provides all dependencies required for application
  */
 @Module(includes = ViewModelModule.class)
 public class AppModule {

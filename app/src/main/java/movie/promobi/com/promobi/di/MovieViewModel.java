@@ -14,7 +14,7 @@ import movie.promobi.com.promobi.data.remote.Status;
 import movie.promobi.com.promobi.repository.MovieRepository;
 
 /**
- * Created by Admin on 6/4/2019.
+ * Created by Vinayak on 6/4/2019.
  */
 
 public class MovieViewModel extends ViewModel {

@@ -15,6 +15,10 @@ import java.util.List;
 import movie.promobi.com.promobi.R;
 import movie.promobi.com.promobi.data.local.entity.Movie;
 
+/**
+ *  Adapter for showing list of movies.
+ *
+ */
 public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.MovieListHolder> {
 
 

@@ -66,6 +66,9 @@ public class HomeActivity extends AppCompatActivity implements LifecycleOwner, H
 
     }
 
+    /**
+     *  This function initializes  MovieViewModel and makes call to server for fetching movie list
+     */
     void init() {
         viewModel = ViewModelProviders.of(this, factory).get(MovieViewModel.class);
 

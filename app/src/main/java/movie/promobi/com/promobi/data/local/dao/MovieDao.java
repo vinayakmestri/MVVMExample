@@ -12,7 +12,8 @@ import java.util.List;
 import movie.promobi.com.promobi.data.local.entity.Movie;
 
 /**
- * Created by Admin on 6/5/2019.
+ * Created by Vinayak on 6/5/2019.
+ * Used for ROOM database operations
  */
 @Dao
 public interface MovieDao {

@@ -7,7 +7,7 @@ import movie.promobi.com.promobi.data.local.entity.Movie;
 import movie.promobi.com.promobi.data.local.dao.MovieDao;
 
 /**
- * Created by Admin on 6/5/2019.
+ * Created by Vinayak on 6/5/2019.
  */
 
 @Database(entities = {Movie.class}, version = 2,exportSchema = false)

@@ -16,7 +16,9 @@ import movie.promobi.com.promobi.di.ApplicationComponent;
 import movie.promobi.com.promobi.di.DaggerApplicationComponent;
 
 /**
- * Created by Admin on 6/8/2019.
+ * Created by Vinayak on 6/8/2019.
+ *  MyApplication class initialize appComponent and Fresco library
+ *  Fresco library is works similar as Glide for loading image
  */
 
 public class MyApplication extends Application implements HasActivityInjector {

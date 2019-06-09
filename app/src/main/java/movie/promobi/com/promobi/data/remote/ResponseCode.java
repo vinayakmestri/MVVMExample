@@ -1,7 +1,7 @@
 package movie.promobi.com.promobi.data.remote;
 
 /**
- * Created by Admin on 4/12/2017.
+ * Created by Vinayak on 4/12/2017.
  */
 
 public class ResponseCode {

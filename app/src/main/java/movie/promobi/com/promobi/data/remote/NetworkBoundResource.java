@@ -11,6 +11,11 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ *
+ * NetworkBoundResource is call back class used for fetching data from server or from database.
+ * It retrive data either from server or database depending upon network connection
+ */
 public abstract class NetworkBoundResource<ResultType, RequestType> {
     private final MediatorLiveData<Resource<ResultType>> result = new MediatorLiveData<>();
 
