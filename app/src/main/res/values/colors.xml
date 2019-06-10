@@ -5,4 +5,5 @@
     <color name="colorAccent">#FF4081</color>
     <color name="Transparent">#00ffffff</color>
     <color name="BlackLight">#70000000</color>
+    <color name="blue">#0000FF</color>
 </resources>
