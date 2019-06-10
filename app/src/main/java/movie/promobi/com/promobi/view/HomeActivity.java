@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.arch.lifecycle.LifecycleOwner;
 import android.arch.lifecycle.ViewModelProvider;
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -27,7 +28,7 @@ import movie.promobi.com.promobi.data.remote.Status;
 import movie.promobi.com.promobi.di.MovieViewModel;
 import movie.promobi.com.promobi.util.ProgressBarHandler;
 
-public class HomeActivity extends AppCompatActivity implements LifecycleOwner, HasActivityInjector {
+public class HomeActivity extends AppCompatActivity implements LifecycleOwner, HasActivityInjector,MovieListAdapter.OnMovieClickListener {
 
 
     List<Movie> movies = new ArrayList<>();
@@ -59,7 +60,7 @@ public class HomeActivity extends AppCompatActivity implements LifecycleOwner, H
         progressBarHandler = new ProgressBarHandler(this);
         movieListRecyclerView = findViewById(R.id.movieListRecyclerView);
         movieListRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        movieListAdapter = new MovieListAdapter(this, movies);
+        movieListAdapter = new MovieListAdapter(this,this, movies);
         movieListRecyclerView.setAdapter(movieListAdapter);
 
         init();
@@ -111,5 +112,13 @@ public class HomeActivity extends AppCompatActivity implements LifecycleOwner, H
     @Override
     public AndroidInjector<Activity> activityInjector() {
         return activityDispatchingAndroidInjector;
+    }
+
+    @Override
+    public void onMovieSelectedListener(Movie movie) {
+        Intent intent = new Intent(this,MovieInformation.class);
+        intent.putExtra("object",movie);
+        startActivity(intent);
+
     }
 }

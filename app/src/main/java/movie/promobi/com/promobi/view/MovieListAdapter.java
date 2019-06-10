@@ -16,18 +16,19 @@ import movie.promobi.com.promobi.R;
 import movie.promobi.com.promobi.data.local.entity.Movie;
 
 /**
- *  Adapter for showing list of movies.
- *
+ * Adapter for showing list of movies.
  */
 public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.MovieListHolder> {
 
 
     Context context;
     private List<Movie> movies;
+    private  OnMovieClickListener onMovieClickListener;
 
-    public MovieListAdapter(Context context, List<Movie> movies) {
+    public MovieListAdapter(Context context,OnMovieClickListener onMovieClickListener, List<Movie> movies) {
         this.context = context;
         this.movies = movies;
+        this.onMovieClickListener= onMovieClickListener;
 
     }
 
@@ -47,8 +48,6 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
     public void onBindViewHolder(final MovieListHolder holder, int position) {
         try {
             holder.title.setText("" + movies.get(position).getDisplayTitle());
-            holder.heading.setText("" + movies.get(position).getHeadline());
-            holder.summary.setText("" + movies.get(position).getSummaryShort());
             String url = movies.get(position).getMultimedia().getSrc();
             if (url != null) {
                 holder.movieImage.setImageURI(Uri.parse(url));
@@ -65,7 +64,7 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
     }
 
     public class MovieListHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        public TextView title, heading, summary;
+        public TextView title;
         public SimpleDraweeView movieImage;
 
         public MovieListHolder(View view) {
@@ -73,15 +72,15 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
             view.setOnClickListener(this);
 
             title = (TextView) view.findViewById(R.id.title);
-            heading = (TextView) view.findViewById(R.id.headline);
-            summary = (TextView) view.findViewById(R.id.summary);
             movieImage = (SimpleDraweeView) view.findViewById(R.id.movieImage);
 
         }
 
         @Override
         public void onClick(View view) {
-
+            if(onMovieClickListener!=null) {
+                onMovieClickListener.onMovieSelectedListener(movies.get(getPosition()));
+            }
         }
     }
 
@@ -90,5 +89,8 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
         notifyDataSetChanged();
     }
 
+    public interface OnMovieClickListener {
+        void onMovieSelectedListener(Movie movie);
+    }
 
 }

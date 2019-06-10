@@ -17,27 +17,6 @@
 
 
         <TextView
-            android:id="@+id/headline"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:maxLines="3"
-            android:layout_alignParentTop="true"
-            android:layout_gravity="top"
-            android:textColor="@android:color/white"
-            android:textSize="15sp" />
-
-        <TextView
-            android:id="@+id/summary"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:maxLines="3"
-            android:layout_below="@id/headline"
-            android:textColor="@android:color/white"
-            android:textSize="12sp" />
-
-        <TextView
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
