@@ -5,8 +5,10 @@ import android.arch.persistence.room.PrimaryKey;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
+
 @Entity(tableName = "multimedia")
-public class Multimedia {
+public class Multimedia implements Serializable {
 
     @SerializedName("type")
     private String type;

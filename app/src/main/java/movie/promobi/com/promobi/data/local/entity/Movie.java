@@ -6,8 +6,10 @@ import android.arch.persistence.room.TypeConverters;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
+
 @Entity(tableName = "movie")
-public class Movie {
+public class Movie implements Serializable {
 
     @PrimaryKey(autoGenerate = true)
     public Long id;
@@ -23,15 +25,25 @@ public class Movie {
     private String headline;
     @SerializedName("summary_short")
     private String summaryShort;
-    @SerializedName("privateation_date")
-    private String privateationDate;
+    @SerializedName("publication_date")
+    private String publication_date;
     @SerializedName("opening_date")
     private String openingDate;
+
+    public String getPublication_date() {
+        return publication_date;
+    }
+
+    public void setPublication_date(String publication_date) {
+        this.publication_date = publication_date;
+    }
+
     @SerializedName("date_updated")
     private String dateUpdated;
-    //@SerializedName("link")
-    //private Link link;
-    @TypeConverters(DataConverter.class)
+    @TypeConverters(DataConverterLink.class)
+    @SerializedName("link")
+    private Link link;
+    @TypeConverters(DataConverterMedia.class)
     @SerializedName("multimedia")
     private Multimedia multimedia = null;
 
@@ -92,13 +104,6 @@ public class Movie {
         this.summaryShort = summaryShort;
     }
 
-    public String getPrivateationDate() {
-        return privateationDate;
-    }
-
-    public void setPrivateationDate(String privateationDate) {
-        this.privateationDate = privateationDate;
-    }
 
     public String getOpeningDate() {
         return openingDate;
@@ -116,14 +121,14 @@ public class Movie {
         this.dateUpdated = dateUpdated;
     }
 
-    /* public Link getLink() {
-         return link;
-     }
+    public Link getLink() {
+        return link;
+    }
 
-     public void setLink(Link link) {
-         this.link = link;
-     }
- */
+    public void setLink(Link link) {
+        this.link = link;
+    }
+
     public Multimedia getMultimedia() {
         return multimedia;
     }

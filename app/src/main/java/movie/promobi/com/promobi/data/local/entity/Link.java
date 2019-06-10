@@ -4,8 +4,10 @@ import android.arch.persistence.room.Entity;
 
 import com.google.gson.annotations.SerializedName;
 
-@Entity
-public class Link {
+import java.io.Serializable;
+
+@Entity(tableName = "link")
+public class Link implements Serializable {
 
     @SerializedName("type")
     private String type;
